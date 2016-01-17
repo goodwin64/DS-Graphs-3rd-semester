@@ -32,18 +32,16 @@ def writeToIncidenceMatrix(G, M1):
     '''
     edges = countEdges(M1)
 
-    M2 = [[0 for i in range(edges)] for j in range(len(G.vertList.keys()))]
+    M2 = [[0 for i in range(edges)] for j in range(len(G.vertList))]
                 
     f = open('m2.txt', 'w')
     c = 0
-    for i in range(0, 4):
+    for i in range(0, len(M1)):
         for j in range(0, i+1):
             if M1[i][j] == 1:
                 M2[i][c] = 1
                 M2[j][c] = 1
                 c += 1
-            #print(M1[i][j] == 1, "-{0}-{1}-{2}".format(i,j,c))
-            #prettyPrint(M2)
 
     for row in M2:
         for cell in row:
