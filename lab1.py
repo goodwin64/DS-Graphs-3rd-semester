@@ -57,7 +57,7 @@ def writeToIncidenceMatrix(G, M1):
 
     for row in M2:
         for cell in row:
-            f.write("%7d ".format(cell))
+            f.write("{0:2d}".format(cell))
         f.write("\n")
 
     f.close()
@@ -88,12 +88,12 @@ def writeToDistanceMatrix(G, M1):
             for j in range(len(M3)):
                 M3[i][j] = min(M3[i][j], M3[i][k] + M3[k][j])
 
-    f = open('m2.txt', 'w')
+    f = open('m3.txt', 'w')
 
     # From matrix to .txt-file
     for row in M3:
         for cell in row:
-            f.write("{0:4d}".format(cell))
+            f.write("{0:2d}".format(cell))
         f.write("\n")
 
     f.close()
