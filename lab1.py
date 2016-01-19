@@ -55,9 +55,19 @@ def writeToIncidenceMatrix(G, M1):
                 M2[j][c] = 1
                 c += 1
 
+    chr0 = 65
+    f.write(" ")
+    for cell in range(1, len(M2[0])+1):
+        f.write("{0:3d}".format(cell))
+    f.write("\n")
+    for cell in range(1, len(M2[0])*3):
+        f.write("_")
+    f.write("\n")
     for row in M2:
+        f.write("{0}".format(chr(chr0)))
+        chr0 += 1
         for cell in row:
-            f.write("{0:2d}".format(cell))
+            f.write("{0:3d}".format(cell))
         f.write("\n")
 
     f.close()
